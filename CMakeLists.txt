@@ -8,8 +8,10 @@ include(cmake/include_library.cmake)
 arduino_include_library(Wire)
 arduino_include_library(SocketWrapper)
 arduino_include_library(WiFi)
+arduino_include_library(SPI)
 
 
+add_subdirectory(lib/LSM6DSOX)
 add_subdirectory(lib/ArduinoBLE)
 add_subdirectory(src)
 
@@ -45,6 +47,8 @@ target_link_libraries(firmware.elf
     ArduinoBLE
     SocketWrapper
     WiFi
+    SPI
+    LSM6DSOX
     Main
 
     ${ARDUINO_CORE_DIR}/variants/NICLA_VISION/libs/libmbed.a
