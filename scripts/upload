@@ -1,0 +1,9 @@
+#!/bin/bash
+
+port=$1
+
+touch1200 $port
+
+sleep 3
+
+dfu-util --device 2341:035f -D build/firmware.bin -a 0 --dfuse-address=0x08040000:leave

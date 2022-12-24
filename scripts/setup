@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmake -S . -B build \
+    -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain.cmake \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=1
